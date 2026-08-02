@@ -225,6 +225,19 @@ button:active {
   margin-bottom: 1rem;
 }
 
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.results-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
 .results-grid table {
   width: 100%;
   border-collapse: collapse;
@@ -254,4 +267,60 @@ button:active {
 
 .results-empty {
   color: var(--text-muted);
+}
+
+.sidebar-section {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin: 1.25rem 0 0.5rem 0;
+}
+
+.sidebar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-list li {
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-list li:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.sidebar-list li.empty {
+  cursor: default;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.sidebar-list li.empty:hover {
+  background-color: transparent;
+}
+
+.save-query {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.save-query input {
+  flex: 1;
+  border-radius: 8px;
+  border: 1px solid var(--border-default);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-family: inherit;
+  color: var(--text-primary);
+  background-color: var(--button-bg);
 }

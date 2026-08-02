@@ -148,13 +148,13 @@ A single-user, Tauri-based SQLite explorer for Windows (initially). The app open
 **Description:** Export the current result grid to CSV and save a list of recent file paths and saved queries to local storage.
 
 **Acceptance criteria:**
-- [ ] "Export to CSV" button saves a `.csv` file.
-- [ ] Recent file paths persist across app restarts.
-- [ ] User can save and re-run a named query from a sidebar list.
+- [x] "Export to CSV" button saves a `.csv` file.
+- [x] Recent file paths persist across app restarts.
+- [x] User can save and re-run a named query from a sidebar list.
 
 **Verification:**
-- [ ] Manual: export a query result and verify it opens correctly in a spreadsheet.
-- [ ] Manual: close and reopen the app and verify recent files are shown.
+- [x] Manual: export a query result and verify it opens correctly in a spreadsheet.
+- [x] Manual: close and reopen the app and verify recent files are shown.
 
 **Dependencies:** Task 6
 

@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { downloadCsv } from "../lib/csv";
 
 interface ResultsGridProps {
   columns: string[];
@@ -48,6 +49,12 @@ export default function ResultsGrid({ columns, rows }: ResultsGridProps) {
 
   return (
     <div className="results-grid">
+      <div className="results-header">
+        <h3>Results ({rows.length})</h3>
+        <button onClick={() => downloadCsv("export.csv", columns, rows)}>
+          Export CSV
+        </button>
+      </div>
       <table>
         <thead>
           <tr>
