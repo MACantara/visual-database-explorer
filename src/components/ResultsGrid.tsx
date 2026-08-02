@@ -62,7 +62,7 @@ export default function ResultsGrid({ columns, rows }: ResultsGridProps) {
                 }
               >
                 {col}
-                {sortColumn === col && (sortDirection === "asc" ? " ▲" : " ▼")}
+                {sortColumn === col && (sortDirection === "asc" ? " ^" : " v")}
               </th>
             ))}
           </tr>
