@@ -14,7 +14,7 @@ async fn pick_file(app: tauri::AppHandle) -> Option<String> {
 }
 
 #[tauri::command]
-async fn save_csv(path: String, content: String) -> Result<(), String> {
+async fn save_text(path: String, content: String) -> Result<(), String> {
     std::fs::write(&path, content).map_err(|e| e.to_string())
 }
 
@@ -29,7 +29,7 @@ pub fn run() {
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_sql::Builder::new().build())
         .plugin(tauri_plugin_opener::init())
-        .invoke_handler(tauri::generate_handler![greet, pick_file, save_csv])
+        .invoke_handler(tauri::generate_handler![greet, pick_file, save_text])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

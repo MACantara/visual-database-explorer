@@ -4,8 +4,10 @@ import Database from "@tauri-apps/plugin-sql";
 import SchemaTree from "./components/SchemaTree";
 import SqlEditor from "./components/SqlEditor";
 import ResultsGrid from "./components/ResultsGrid";
+import ErDiagram from "./components/ErDiagram";
 import { openDatabase, Schema } from "./lib/schema";
 import { runQuery, QueryResult } from "./lib/query";
+import { schemaToErDiagram } from "./lib/mermaid";
 import "./App.css";
 
 interface SavedQuery {
@@ -15,6 +17,8 @@ interface SavedQuery {
 
 const RECENT_FILES_KEY = "vse:recentFiles";
 const SAVED_QUERIES_KEY = "vse:savedQueries";
+
+type View = "sql" | "er";
 
 function App() {
   const [status, setStatus] = useState<string>("No file selected");
@@ -27,6 +31,7 @@ function App() {
   const [recentFiles, setRecentFiles] = useState<string[]>([]);
   const [savedQueries, setSavedQueries] = useState<SavedQuery[]>([]);
   const [queryName, setQueryName] = useState<string>("");
+  const [view, setView] = useState<View>("sql");
 
   useEffect(() => {
     try {
@@ -65,6 +70,7 @@ function App() {
       setSelected(null);
       setResult(null);
       setError(null);
+      setView("sql");
     } catch (e) {
       setStatus("Error: " + String(e));
       setDb(null);
@@ -158,22 +164,44 @@ function App() {
       <main className="detail">
         {schema && (
           <>
-            <SqlEditor
-              schema={schema}
-              value={sql}
-              onChange={(value) => setSql(value)}
-            />
-            <button onClick={handleRun} className="run-button">
-              Run
-            </button>
+            <div className="detail-tabs">
+              <button
+                className={view === "sql" ? "active" : ""}
+                onClick={() => setView("sql")}
+              >
+                SQL
+              </button>
+              <button
+                className={view === "er" ? "active" : ""}
+                onClick={() => setView("er")}
+              >
+                ER Diagram
+              </button>
+            </div>
+            {view === "sql" ? (
+              <>
+                <SqlEditor
+                  schema={schema}
+                  value={sql}
+                  onChange={(value) => setSql(value)}
+                />
+                <button onClick={handleRun} className="run-button">
+                  Run
+                </button>
+                {error && <p className="error">{error}</p>}
+                {result && (
+                  <ResultsGrid columns={result.columns} rows={result.rows} />
+                )}
+                {selected ? (
+                  <pre>{JSON.stringify(selected, null, 2)}</pre>
+                ) : (
+                  <p>Click a schema node for details</p>
+                )}
+              </>
+            ) : (
+              <ErDiagram definition={schemaToErDiagram(schema)} />
+            )}
           </>
-        )}
-        {error && <p className="error">{error}</p>}
-        {result && <ResultsGrid columns={result.columns} rows={result.rows} />}
-        {selected ? (
-          <pre>{JSON.stringify(selected, null, 2)}</pre>
-        ) : (
-          <p>Click a schema node for details</p>
         )}
       </main>
     </div>

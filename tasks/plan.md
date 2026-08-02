@@ -169,14 +169,14 @@ A single-user, Tauri-based SQLite explorer for Windows (initially). The app open
 **Description:** Generate a Mermaid ER diagram from the introspected schema and render it in the UI.
 
 **Acceptance criteria:**
-- [ ] ER diagram displays all tables and their columns.
-- [ ] Primary and foreign key relationships are shown.
-- [ ] Diagram is exported as SVG/PNG.
-- [ ] Large schemas are still readable (zoom/scroll handled by Mermaid).
+- [x] ER diagram displays all tables and their columns.
+- [x] Primary and foreign key relationships are shown.
+- [x] Diagram is exported as SVG/PNG.
+- [x] Large schemas are still readable (zoom/scroll handled by Mermaid).
 
 **Verification:**
-- [ ] Manual: open a database with multiple related tables and verify the diagram.
-- [ ] Manual: export the diagram and open the image.
+- [x] Manual: open a database with multiple related tables and verify the diagram.
+- [x] Manual: export the diagram and open the image.
 
 **Dependencies:** Task 4
 
@@ -187,9 +187,9 @@ A single-user, Tauri-based SQLite explorer for Windows (initially). The app open
 **Estimated scope:** Medium
 
 ### Checkpoint: Core Features
-- [ ] User can open a database, browse the schema, run SQL with autocomplete, export CSV, and view an ER diagram.
+- [x] User can open a database, browse the schema, run SQL with autocomplete, export CSV, and view an ER diagram.
 - [ ] No critical UI freezes on a 100MB database.
-- [ ] Review with human before proceeding.
+- [x] Review with human before proceeding.
 
 ### Phase 3: Polish and Ship
 

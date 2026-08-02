@@ -20,7 +20,7 @@ export async function exportWithDialog(
   if (!path) return;
 
   const content = toCsv(columns, rows);
-  await invoke("save_csv", { path, content });
+  await invoke("save_text", { path, content });
 }
 
 export function toCsv(
