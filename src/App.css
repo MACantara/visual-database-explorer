@@ -185,3 +185,17 @@ button:active {
     background-color: var(--bg-code);
   }
 }
+
+.sql-editor {
+  margin-bottom: 1rem;
+}
+
+.sql-editor .cm-editor {
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.sql-editor .cm-scroller {
+  min-height: 300px;
+}

@@ -107,13 +107,13 @@ A single-user, Tauri-based SQLite explorer for Windows (initially). The app open
 **Description:** Integrate a SQL editor (CodeMirror 6) with syntax highlighting and programmatic, schema-aware autocomplete. Suggestions come from the currently loaded schema (tables, columns, aliases) and a static SQLite keyword list.
 
 **Acceptance criteria:**
-- [ ] Editor has SQL syntax highlighting.
-- [ ] Typing `SELECT * FROM ` shows a list of tables.
-- [ ] Autocomplete for column names appears after a table alias is introduced.
-- [ ] No external AI or LLM is used.
+- [x] Editor has SQL syntax highlighting.
+- [x] Typing `SELECT * FROM ` shows a list of tables.
+- [x] Autocomplete for column names appears after a table alias is introduced.
+- [x] No external AI or LLM is used.
 
 **Verification:**
-- [ ] Manual: type sample queries and verify autocomplete suggestions.
+- [x] Manual: type sample queries and verify autocomplete suggestions.
 
 **Dependencies:** Task 4
 
