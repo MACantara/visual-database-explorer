@@ -3,8 +3,13 @@ use tauri_plugin_dialog::DialogExt;
 
 #[tauri::command]
 async fn pick_file(app: tauri::AppHandle) -> Option<String> {
-    app.dialog().file().pick_file()
-        .map(|p| p.to_string_lossy().into_owned())
+    let (tx, mut rx) = tauri::async_runtime::channel(1);
+    app.dialog().file().pick_file(move |file_path| {
+        let _ = tx.send(file_path);
+    });
+    let path = rx.recv().await.flatten()?;
+    let path = path.into_path().ok()?;
+    Some(path.to_string_lossy().into_owned())
 }
 
 #[tauri::command]
