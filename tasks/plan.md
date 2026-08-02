@@ -81,12 +81,12 @@ A single-user, Tauri-based SQLite explorer for Windows (initially). The app open
 **Description:** Render the extracted schema as an expandable tree in the left sidebar (Tables > Table > Columns/Indexes/Foreign Keys).
 
 **Acceptance criteria:**
-- [ ] Tree displays tables, columns, indexes, and foreign keys.
-- [ ] Clicking a table or column shows relevant details in a pane.
-- [ ] Tree updates when a new file is opened.
+- [x] Tree displays tables, columns, indexes, and foreign keys.
+- [x] Clicking a table or column shows relevant details in a pane.
+- [x] Tree updates when a new file is opened.
 
 **Verification:**
-- [ ] Manual: open a SQLite file and verify the tree matches the known schema.
+- [x] Manual: open a SQLite file and verify the tree matches the known schema.
 
 **Dependencies:** Task 3
 
@@ -97,9 +97,9 @@ A single-user, Tauri-based SQLite explorer for Windows (initially). The app open
 **Estimated scope:** Medium
 
 ### Checkpoint: Foundation
-- [ ] App opens a SQLite file and displays a correct schema tree.
-- [ ] No runtime errors in the dev console.
-- [ ] Review with human before proceeding.
+- [x] App opens a SQLite file and displays a correct schema tree.
+- [x] No runtime errors in the dev console.
+- [x] Review with human before proceeding.
 
 ### Phase 2: Core Features
 
