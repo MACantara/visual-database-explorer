@@ -24,15 +24,13 @@ export default function SqlEditor({ schema, value, onChange }: SqlEditorProps) {
 
   const cmSchema = schemaToCodeMirror(schema);
   const extensions = [sql({ schema: cmSchema, upperCaseKeywords: true })];
-  if (isDark) {
-    extensions.push(oneDark);
-  }
 
   return (
     <CodeMirror
       value={value}
       height="300px"
       className="sql-editor"
+      theme={isDark ? oneDark : "light"}
       extensions={extensions}
       onChange={onChange}
     />
