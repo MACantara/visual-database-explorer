@@ -46,8 +46,8 @@ A single-user, Tauri-based SQLite explorer for Windows (initially). The app open
 - [x] Canceling the picker does not crash the app.
 
 **Verification:**
-- [ ] Manual: open a `.db` file on the local filesystem.
-- [ ] Manual: cancel the picker and confirm no crash.
+- [X] Manual: open a `.db` file on the local filesystem.
+- [X] Manual: cancel the picker and confirm no crash.
 
 **Dependencies:** Task 1
 
@@ -61,13 +61,13 @@ A single-user, Tauri-based SQLite explorer for Windows (initially). The app open
 **Description:** Use `tauri-plugin-sql` to load the selected SQLite file and query `sqlite_master` plus PRAGMAs to extract tables, columns, indexes, and foreign keys.
 
 **Acceptance criteria:**
-- [ ] List all tables in the database.
-- [ ] For each table, list columns with type and NOT NULL status.
-- [ ] For each table, list indexes and foreign keys.
-- [ ] Introspection handles an empty database and a database with many tables.
+- [x] List all tables in the database.
+- [x] For each table, list columns with type and NOT NULL status.
+- [x] For each table, list indexes and foreign keys.
+- [x] Introspection handles an empty database and a database with many tables.
 
 **Verification:**
-- [ ] Manual: compare the extracted schema for a known `.db` file against the actual schema.
+- [x] Manual: compare the extracted schema for a known `.db` file against the actual schema.
 
 **Dependencies:** Task 2
 
