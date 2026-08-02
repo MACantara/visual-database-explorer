@@ -6,6 +6,23 @@ function escapeCsv(value: unknown): string {
   return s;
 }
 
+import { save } from "@tauri-apps/plugin-dialog";
+import { invoke } from "@tauri-apps/api/core";
+
+export async function exportWithDialog(
+  columns: string[],
+  rows: Record<string, unknown>[]
+): Promise<void> {
+  const path = await save({
+    defaultPath: "export.csv",
+    filters: [{ name: "CSV", extensions: ["csv"] }],
+  });
+  if (!path) return;
+
+  const content = toCsv(columns, rows);
+  await invoke("save_csv", { path, content });
+}
+
 export function toCsv(
   columns: string[],
   rows: Record<string, unknown>[]
