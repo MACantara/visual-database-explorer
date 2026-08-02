@@ -40,9 +40,10 @@ A single-user, Tauri-based SQLite explorer for Windows (initially). The app open
 **Description:** Add a Tauri command that shows a native file picker, filters for `.db` and `.sqlite`, and returns the file path to the frontend.
 
 **Acceptance criteria:**
-- [ ] User can open a file picker from the UI.
-- [ ] Selected file path is displayed in the app.
-- [ ] Canceling the picker does not crash the app.
+- [x] User can open a file picker from the UI.
+- [x] File picker filters `.db` and `.sqlite` files.
+- [x] Selected file path is displayed in the app.
+- [x] Canceling the picker does not crash the app.
 
 **Verification:**
 - [ ] Manual: open a `.db` file on the local filesystem.
