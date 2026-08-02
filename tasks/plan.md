@@ -127,14 +127,14 @@ A single-user, Tauri-based SQLite explorer for Windows (initially). The app open
 **Description:** Add the ability to run the SQL in the editor and display the result set in a sortable grid.
 
 **Acceptance criteria:**
-- [ ] User can run the editor's SQL with a button or shortcut.
-- [ ] Results appear in a grid with columns matching the query output.
-- [ ] Grid supports sorting for numeric and text columns.
-- [ ] Query errors are shown without crashing the app.
+- [x] User can run the editor's SQL with a button or shortcut.
+- [x] Results appear in a grid with columns matching the query output.
+- [x] Grid supports sorting for numeric and text columns.
+- [x] Query errors are shown without crashing the app.
 
 **Verification:**
-- [ ] Manual: run several SELECT, INSERT, UPDATE, and DELETE statements.
-- [ ] Manual: verify sorting works on numeric and text columns.
+- [x] Manual: run several SELECT, INSERT, UPDATE, and DELETE statements.
+- [x] Manual: verify sorting works on numeric and text columns.
 
 **Dependencies:** Task 5
 
